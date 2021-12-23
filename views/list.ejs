@@ -1,0 +1,21 @@
+<%- include("header") -%>
+  <div class="box" id="heading">
+    <h1><%= task %></h1>
+  </div>
+  <!-- the above line of code dsiplays the date and day -->
+  <div class="box">
+    <%for(let i = 0; i < useradd.length; i++){%>
+    <div class="item">
+      <input type="checkbox">
+      <p><%= useradd[i] %></p>
+    </div>
+
+    <%}%>
+    <!-- what the above code does is it loops through each element of array info in app.js and displays on web page -->
+    <form action="/" method="post">
+      <input type="text" name="userinfo" placeholder="Add Your Tasks" autocomplete="off"> <button type="submit" name="list" value=<%=task%>>+</button>
+    <!-- the user's input is stored in userinfo ie input tag and we trigger a post request which goes to app.post in app.js -->
+    </form>
+  </div>
+
+<%- include("footer") -%>
