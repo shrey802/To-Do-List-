@@ -2,6 +2,7 @@ const express = require("express")
 const bodyParser = require("body-parser")
 const nodemon = require("nodemon")
 const date = require(__dirname + "/date.js")
+const port = process.env.PORT || 3000
 const app = express()
 //in the above code we require the modules for npm packages
 const info = []
@@ -48,6 +49,6 @@ app.get("/work", function(req, res) {
 app.get("/about", (req, res) => {
   res.render("about")
 })
-app.listen("3000", (req, res) => {
+app.listen(port, (req, res) => {
   console.log("server started")
 })
